@@ -13,6 +13,7 @@ function listar() {
   produtos.forEach((produto) => console.log(produto.nome, "-", produto.preco));
 }
 
+
 function buscar() {
   const nome = readline.question("Informe o nome do produto: ");
   const buscou = produtos.find((produto) => produto.nome === nome);
