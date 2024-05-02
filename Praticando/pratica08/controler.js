@@ -13,9 +13,28 @@ function buscarContato(nome){
 }
 
 function atualizarContato(nome, email, telefone){
-    const contatos = buscarContato();
+    const contatos = buscarContato(nome);
 
-    if(contatos){
-        //parei na i da 5
+    if(contatos == nome){
+        contatos.alterar(contatos);
+    } else{
+        console.log("Esse trem não existe");
+    }
+
+    alterar(contatos);
+}
+
+function removerContato(nome){
+    const contatos = buscarContato(nome);
+
+    if(contatos == nome){
+        contatos.deletar(contatos);
+    } else{
+        console.log("Esse trem não existe");
     }
 }
+
+module.exports = adicionarContato;
+module.exports = buscarContato;
+module.exports = atualizarContato;
+module.exports = removerContato;
