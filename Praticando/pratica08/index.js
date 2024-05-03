@@ -12,7 +12,6 @@ function menu(){
 function escolhaOpcao(opcao){
     switch(opcao){
         case "1":
-    readline.question("Adicione um novo nome:");
     controlador.adicionarContato();
         break
         case "2":
