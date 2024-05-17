@@ -1,16 +1,20 @@
-const express = require('express');
+const express = require("express");
 
-const controllerProdutos = require('../controllers/controller_produto');
+const controllerProdutos = require("../controllers/controller_produto");
 
 const router = express.Router();
 
-router.post('/', controllerProdutos.validar, controllerProdutos.criar);
+router.post("/", controllerProdutos.validar, controllerProdutos.criar);
 
 router.get("/", controllerProdutos.listar);
 
-router.get("/:id", controllerProdutos.obter);
+router.get(
+  "/:id",
+    controllerProdutos.buscar,
+  controllerProdutos.obter
+);
 
-module.exports = router; 
+router.put("/:id", controllerProdutos.atualizar);
 
 
-
+module.exports = router;
